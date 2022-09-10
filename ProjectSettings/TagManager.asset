@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Silla
   - mesa
+  - NPC
   layers:
   - Default
   - TransparentFX
