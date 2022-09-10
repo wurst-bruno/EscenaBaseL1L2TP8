@@ -22,9 +22,8 @@ public class DialogoManager : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-
         // al entrar activa la UI de diálogo
-        if (other.gameObject.CompareTag(" NPC "))
+        if (other.gameObject.CompareTag("NPC"))
         {
             dialogueUI.SetActive(true);
         }
@@ -32,10 +31,9 @@ public class DialogoManager : MonoBehaviour
     void OnTriggerExit(Collider other)
     {
         // al salir desactiva la UI de diálogo
-        if (other.gameObject.CompareTag(" NPC "))
+        if (other.gameObject.CompareTag("NPC"))
         {
             dialogueUI.SetActive(false);
-
         }
     }
 }
