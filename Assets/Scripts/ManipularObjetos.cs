@@ -33,6 +33,8 @@ public class ManipularObjetos : MonoBehaviour
         for (int i = 0; i < sillas.Length; i++)
         {
             sillas[i].AddComponent<BoxCollider>();
+            
+            
         }
     }
 
