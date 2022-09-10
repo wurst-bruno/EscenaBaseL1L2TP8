@@ -10,25 +10,14 @@ public class ManipularObjetos : MonoBehaviour
     void Start()
     {
         sillas = GameObject.FindGameObjectsWithTag("Silla");
+        AgregarRBAElementosDelArray();
+        AgregarColliderAElementosDelArray();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Backspace))
-        {
-            //DesactivarElementosDelArray();
-            AgregarRBAElementosDelArray();
-            AgregarColliderAElementosDelArray();
-        }
-    }
-
-    void DesactivarElementosDelArray()
-    {
-        for (int i = 0; i < sillas.Length; i++)
-        {
-            sillas[i].SetActive(false);
-        }
+        
     }
 
     void AgregarRBAElementosDelArray()
