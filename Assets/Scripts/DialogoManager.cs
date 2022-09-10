@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class DialogoManager : MonoBehaviour
 {
 
     [SerializeField] GameObject dialogueUI;
+    [SerializeField] TextMeshProUGUI textoDelDialogo;
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +27,8 @@ public class DialogoManager : MonoBehaviour
         // al entrar activa la UI de diálogo
         if (other.gameObject.CompareTag("NPC"))
         {
+            textoDelDialogo.text = " Hola forastero ! ";
+
             dialogueUI.SetActive(true);
         }
     }
