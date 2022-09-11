@@ -5,39 +5,69 @@ using TMPro;
 
 public class DialogoManager : MonoBehaviour
 {
-
     [SerializeField] GameObject dialogueUI;
     [SerializeField] TextMeshProUGUI textoDelDialogo;
+    [SerializeField] string[] frasesDialogo;
+    [SerializeField] int posicionFrase;
+    [SerializeField] bool hasTalked;
 
     // Start is called before the first frame update
     void Start()
     {
         dialogueUI.SetActive(false);
-
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        if (Input.GetKeyDown(KeyCode.E) && hasTalked == false)
+        {
+            NextFrase();
+        }
     }
 
     void OnTriggerEnter(Collider other)
     {
-        // al entrar activa la UI de diálogo
         if (other.gameObject.CompareTag("NPC"))
         {
-            textoDelDialogo.text = " Hola forastero ! ";
-
+            frasesDialogo = other.gameObject.GetComponent<NPCBehavior>().Data.dialogueFrases;
             dialogueUI.SetActive(true);
+
+            if (!hasTalked)
+            {
+                //al entrar activa la UI de dialogo
+                textoDelDialogo.text = "Ayuda!";
+            }
+
+            else
+            {
+                textoDelDialogo.text = "Ya hable con vos, anda a buscar";
+            }
         }
     }
+
     void OnTriggerExit(Collider other)
     {
-        // al salir desactiva la UI de diálogo
         if (other.gameObject.CompareTag("NPC"))
         {
+            //al entrar desactiva la UI de dialogo
             dialogueUI.SetActive(false);
         }
+    }
+
+    void NextFrase()
+    {
+        if (posicionFrase < frasesDialogo.Length)
+        {
+            textoDelDialogo.text = frasesDialogo[posicionFrase];
+            posicionFrase++;
+        }
+
+        else
+        {
+            dialogueUI.SetActive(false);
+            hasTalked = true;
+        }
+
     }
 }
