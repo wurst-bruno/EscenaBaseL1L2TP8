@@ -5,37 +5,34 @@ using UnityEngine;
 public class ManipularObjetos : MonoBehaviour
 {
     [SerializeField] GameObject[] sillas;
+    [SerializeField] int index;
+    [SerializeField] GameObject SillaEspecial;
     
-    // Start is called before the first frame update
     void Start()
     {
         sillas = GameObject.FindGameObjectsWithTag("Silla");
-        AgregarRBAElementosDelArray();
+        index = Random.Range(0, sillas.Length);
+        SillaEspecial = sillas[index];
+        //AgregarRBAElementosDelArray();
         AgregarColliderAElementosDelArray();
     }
 
-    // Update is called once per frame
+   
     void Update()
     {
         
     }
+    
+    //void AgregarRBAElementosDelArray()
+    //{
 
-    void AgregarRBAElementosDelArray()
-    {
-        for (int i = 0; i < sillas.Length; i++)
-        {        
-            sillas[i].AddComponent<Rigidbody>();
-        }        
-    }
+    //    sillas[index].AddComponent<Rigidbody>();
+
+    //}
 
     void AgregarColliderAElementosDelArray()
     {
-        for (int i = 0; i < sillas.Length; i++)
-        {
-            sillas[i].AddComponent<BoxCollider>();
-            
-            
-        }
+        sillas[index].AddComponent<BoxCollider>();
     }
 
 

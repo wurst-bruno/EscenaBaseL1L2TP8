@@ -6,13 +6,13 @@ using TMPro;
 public class Aignaasilla : MonoBehaviour
 {
 
-    [SerializeField] GameObject Silladialogo;
-    [SerializeField] TextMeshProUGUI textoDelDialogo;
+    [SerializeField] GameObject CanvasSilla;
+    [SerializeField] TextMeshProUGUI textoDeSilla;
 
     // Start is called before the first frame update
     void Start()
     {
-        Silladialogo.SetActive(false);
+        CanvasSilla.SetActive(false);
 
     }
 
@@ -27,9 +27,9 @@ public class Aignaasilla : MonoBehaviour
         // al entrar activa la UI de diálogo
         if (other.gameObject.CompareTag("Silla"))
         {
-            textoDelDialogo.text = "Press E";
+            textoDeSilla.text = "Press E";
 
-            Silladialogo.SetActive(true);
+            CanvasSilla.SetActive(true);
         }
     }
     void OnTriggerExit(Collider other)
@@ -37,7 +37,7 @@ public class Aignaasilla : MonoBehaviour
         // al salir desactiva la UI de diálogo
         if (other.gameObject.CompareTag("Silla"))
         {
-            Silladialogo.SetActive(false);
+            CanvasSilla.SetActive(false);
         }
     }
 }
