@@ -33,9 +33,14 @@ public class DialogoManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && hasTalked == false)
         {
             NextFrase();
-            timerIsRunning = true;
+            
 
         }
+        if (hasTalked == true)
+        {
+            timerIsRunning = true;
+        }
+
         if (timerIsRunning)
         {
             if (timeRemaining > 0)

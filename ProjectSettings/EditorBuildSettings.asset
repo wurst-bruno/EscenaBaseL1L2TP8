@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Tic L1 L2 controller.unity
+    path: Assets/Scenes/Scene1.unity
     guid: 3329a9759f39477488b14835953caa79
   - enabled: 1
     path: Assets/Scenes/Perdiste.unity
