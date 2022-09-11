@@ -16,16 +16,13 @@ public class Aignaasilla : MonoBehaviour
     void Start()
     {
         CanvasSilla.SetActive(false);
-
+        WinUI.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) || CanvasSilla.SetActive(true))
-        {
-
-        }
+        
     }
 
     void OnTriggerEnter(Collider other)

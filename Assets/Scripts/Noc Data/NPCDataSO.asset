@@ -15,7 +15,7 @@ MonoBehaviour:
   dialogueFrases:
   - Hola!
   - Tenes que buscar la silla correcta
-  - Cuando la escuentres
-  - "Toc\xE1 E y volv\xE9 a ac\xE1"
+  - Cuando la encuentres
+  - "Toc\xE1 Q y Gan\xE1"
   - "Ahora labur\xE1"
   hasTalked: 0

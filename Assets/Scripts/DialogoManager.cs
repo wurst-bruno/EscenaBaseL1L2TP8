@@ -10,13 +10,17 @@ public class DialogoManager : MonoBehaviour
 {
     [SerializeField] GameObject dialogueUI;
     [SerializeField] TextMeshProUGUI textoDelDialogo;
-    [SerializeField] string[] frasesDialogo;
+    [SerializeField] TextMeshProUGUI pressE;
+        [SerializeField] string[] frasesDialogo;
     [SerializeField] int posicionFrase;
     [SerializeField] bool hasTalked;
     [SerializeField] TextMeshProUGUI timeText;
     [SerializeField] TextMeshProUGUI lose;
     [SerializeField] GameObject LoseUI;
-
+    [SerializeField] GameObject CanvasSilla;
+    [SerializeField] TextMeshProUGUI textoDeSilla;
+    [SerializeField] GameObject WinUI;
+    [SerializeField] TextMeshProUGUI win;
 
     public float timeRemaining ;
     public bool timerIsRunning = false;
@@ -26,7 +30,8 @@ public class DialogoManager : MonoBehaviour
     {
         dialogueUI.SetActive(false);
         LoseUI.SetActive(false);
-
+        CanvasSilla.SetActive(false);
+        WinUI.SetActive(false);
         timerIsRunning = false;
     }
 
@@ -62,6 +67,10 @@ public class DialogoManager : MonoBehaviour
                 timerIsRunning = false;
             }
         }
+        if (Input.GetKeyDown(KeyCode.Q) && CanvasSilla == true) //here is the problem
+        {
+            WinUI.SetActive(true);
+        }
 
     }
 
@@ -75,13 +84,29 @@ public class DialogoManager : MonoBehaviour
             if (!hasTalked)
             {
                 //al entrar activa la UI de dialogo
-                textoDelDialogo.text = "Ayuda!";
+                textoDelDialogo.text = "Pss Flaco....";
+                pressE.text = "Press E";
+
             }
 
             else
             {
                 textoDelDialogo.text = "Ya hable con vos, anda a buscar";
 
+            }
+        }
+
+
+
+        // al entrar activa la UI de diálogo
+        if (other.gameObject.CompareTag("Silla"))
+        {
+            textoDeSilla.text = "Press Q";
+
+            CanvasSilla.SetActive(true);
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                WinUI.SetActive(true);
             }
         }
     }
@@ -92,6 +117,10 @@ public class DialogoManager : MonoBehaviour
         {
             //al entrar desactiva la UI de dialogo
             dialogueUI.SetActive(false);
+        }
+        if (other.gameObject.CompareTag("Silla"))
+        {
+            CanvasSilla.SetActive(false);
         }
     }
 
