@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement; 
+
 
 public class DialogoManager : MonoBehaviour
 {
@@ -10,20 +13,44 @@ public class DialogoManager : MonoBehaviour
     [SerializeField] string[] frasesDialogo;
     [SerializeField] int posicionFrase;
     [SerializeField] bool hasTalked;
+    [SerializeField] TextMeshProUGUI timeText;
+    public float timeRemaining ;
+    public bool timerIsRunning = false;
 
     // Start is called before the first frame update
     void Start()
     {
         dialogueUI.SetActive(false);
+        timerIsRunning = false;
     }
+
 
     // Update is called once per frame
     void Update()
     {
+        DisplayTime(timeRemaining);
+
         if (Input.GetKeyDown(KeyCode.E) && hasTalked == false)
         {
             NextFrase();
+            timerIsRunning = true;
+
         }
+        if (timerIsRunning)
+        {
+            if (timeRemaining > 0)
+            {
+                timeRemaining -= Time.deltaTime;
+            }
+            else
+            {
+                SceneManager.LoadScene("Perdiste");
+
+                timeRemaining = 0;
+                timerIsRunning = false;
+            }
+        }
+
     }
 
     void OnTriggerEnter(Collider other)
@@ -42,6 +69,7 @@ public class DialogoManager : MonoBehaviour
             else
             {
                 textoDelDialogo.text = "Ya hable con vos, anda a buscar";
+
             }
         }
     }
@@ -69,5 +97,12 @@ public class DialogoManager : MonoBehaviour
             hasTalked = true;
         }
 
+
+    }
+    void DisplayTime(float timeToDisplay)
+    {
+        float minutes = Mathf.FloorToInt(timeToDisplay / 60);
+        float seconds = Mathf.FloorToInt(timeToDisplay % 60);
+        timeText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
     }
 }
