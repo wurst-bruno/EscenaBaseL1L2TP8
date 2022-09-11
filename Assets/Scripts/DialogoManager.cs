@@ -14,6 +14,10 @@ public class DialogoManager : MonoBehaviour
     [SerializeField] int posicionFrase;
     [SerializeField] bool hasTalked;
     [SerializeField] TextMeshProUGUI timeText;
+    [SerializeField] TextMeshProUGUI lose;
+    [SerializeField] GameObject LoseUI;
+
+
     public float timeRemaining ;
     public bool timerIsRunning = false;
 
@@ -21,6 +25,8 @@ public class DialogoManager : MonoBehaviour
     void Start()
     {
         dialogueUI.SetActive(false);
+        LoseUI.SetActive(false);
+
         timerIsRunning = false;
     }
 
@@ -49,8 +55,9 @@ public class DialogoManager : MonoBehaviour
             }
             else
             {
-                SceneManager.LoadScene("Perdiste");
+                LoseUI.SetActive(true);
 
+                lose.text ="Perdiste";
                 timeRemaining = 0;
                 timerIsRunning = false;
             }

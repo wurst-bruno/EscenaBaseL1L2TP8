@@ -8,6 +8,9 @@ public class Aignaasilla : MonoBehaviour
 
     [SerializeField] GameObject CanvasSilla;
     [SerializeField] TextMeshProUGUI textoDeSilla;
+    [SerializeField] GameObject WinUI;
+    [SerializeField] TextMeshProUGUI win;
+
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +22,10 @@ public class Aignaasilla : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.E) || CanvasSilla.SetActive(true))
+        {
 
+        }
     }
 
     void OnTriggerEnter(Collider other)
