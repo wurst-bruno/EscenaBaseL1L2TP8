@@ -12908,8 +12908,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b29089871d1095949a213b3c6ec72587, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CanvasSilla: {fileID: 1102945573}
-  textoDeSilla: {fileID: 842257935}
+  CanvasSilla: {fileID: 0}
+  textoDeSilla: {fileID: 0}
 --- !u!4 &1980218967
 Transform:
   m_ObjectHideFlags: 0
