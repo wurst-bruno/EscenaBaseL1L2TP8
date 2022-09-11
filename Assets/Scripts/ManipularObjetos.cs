@@ -7,6 +7,7 @@ public class ManipularObjetos : MonoBehaviour
     [SerializeField] GameObject[] sillas;
     [SerializeField] int index;
     [SerializeField] GameObject SillaEspecial;
+    Collider estrigger;
     
     void Start()
     {
@@ -15,9 +16,13 @@ public class ManipularObjetos : MonoBehaviour
         SillaEspecial = sillas[index];
         //AgregarRBAElementosDelArray();
         AgregarColliderAElementosDelArray();
+        estrigger = sillas[index].GetComponent<Collider>();
+        estrigger.isTrigger = true;
+
+
     }
 
-   
+
     void Update()
     {
         
