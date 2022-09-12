@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement; 
+using UnityEngine.SceneManagement;
 
 
 public class DialogoManager : MonoBehaviour
@@ -11,9 +11,10 @@ public class DialogoManager : MonoBehaviour
     [SerializeField] GameObject dialogueUI;
     [SerializeField] TextMeshProUGUI textoDelDialogo;
     [SerializeField] TextMeshProUGUI pressE;
-        [SerializeField] string[] frasesDialogo;
+    [SerializeField] string[] frasesDialogo;
     [SerializeField] int posicionFrase;
     [SerializeField] bool hasTalked;
+    [SerializeField] GameObject TimeUI;
     [SerializeField] TextMeshProUGUI timeText;
     [SerializeField] TextMeshProUGUI lose;
     [SerializeField] GameObject LoseUI;
@@ -22,7 +23,7 @@ public class DialogoManager : MonoBehaviour
     [SerializeField] GameObject WinUI;
     [SerializeField] TextMeshProUGUI win;
 
-    public float timeRemaining ;
+    public float timeRemaining;
     public bool timerIsRunning = false;
 
     // Start is called before the first frame update
@@ -44,7 +45,7 @@ public class DialogoManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && hasTalked == false)
         {
             NextFrase();
-            
+
 
         }
         if (hasTalked == true)
@@ -62,14 +63,17 @@ public class DialogoManager : MonoBehaviour
             {
                 LoseUI.SetActive(true);
 
-                lose.text ="Perdiste";
+                lose.text = "Perdiste";
                 timeRemaining = 0;
                 timerIsRunning = false;
             }
         }
-        if (Input.GetKeyDown(KeyCode.Q) && CanvasSilla == true) //here is the problem
+        if (Input.GetKeyDown(KeyCode.Q) && CanvasSilla.activeInHierarchy) 
         {
             WinUI.SetActive(true);
+            TimeUI.SetActive(false);
+            timeRemaining = 1000;
+            timerIsRunning = false;
         }
 
     }
@@ -83,7 +87,6 @@ public class DialogoManager : MonoBehaviour
 
             if (!hasTalked)
             {
-                //al entrar activa la UI de dialogo
                 textoDelDialogo.text = "Pss Flaco....";
                 pressE.text = "Press E";
 
@@ -98,16 +101,12 @@ public class DialogoManager : MonoBehaviour
 
 
 
-        // al entrar activa la UI de diálogo
         if (other.gameObject.CompareTag("Silla"))
         {
             textoDeSilla.text = "Press Q";
 
             CanvasSilla.SetActive(true);
-            if (Input.GetKeyDown(KeyCode.Q))
-            {
-                WinUI.SetActive(true);
-            }
+            
         }
     }
 
@@ -115,7 +114,6 @@ public class DialogoManager : MonoBehaviour
     {
         if (other.gameObject.CompareTag("NPC"))
         {
-            //al entrar desactiva la UI de dialogo
             dialogueUI.SetActive(false);
         }
         if (other.gameObject.CompareTag("Silla"))

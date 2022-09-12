@@ -204,7 +204,7 @@ RectTransform:
   m_Children:
   - {fileID: 1243140892}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -706,6 +706,7 @@ MonoBehaviour:
   - 
   posicionFrase: 0
   hasTalked: 0
+  TimeUI: {fileID: 53933842}
   timeText: {fileID: 1243140893}
   lose: {fileID: 1976539080}
   LoseUI: {fileID: 1916011545}
@@ -713,7 +714,7 @@ MonoBehaviour:
   textoDeSilla: {fileID: 842257935}
   WinUI: {fileID: 1586455836}
   win: {fileID: 2031259097}
-  timeRemaining: 30
+  timeRemaining: 60
   timerIsRunning: 0
 --- !u!1 &650501160
 GameObject:
@@ -1005,7 +1006,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &842257933
 GameObject:
@@ -1432,7 +1433,7 @@ RectTransform:
   m_Children:
   - {fileID: 842257934}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -11812,9 +11813,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Pre
-
-'
+  m_text: Dialogo
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -11883,9 +11882,9 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1206701268}
-    characterCount: 4
+    characterCount: 7
     spriteCount: 0
-    spaceCount: 1
+    spaceCount: 0
     wordCount: 1
     linkCount: 0
     lineCount: 1
@@ -11969,7 +11968,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: Tiempo al tiempo
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -12014,7 +12013,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: -1
+  m_firstOverflowCharacterIndex: 10
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -12038,12 +12037,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1243140893}
-    characterCount: 8
+    characterCount: 16
     spriteCount: 0
-    spaceCount: 1
-    wordCount: 2
+    spaceCount: 2
+    wordCount: 3
     linkCount: 0
-    lineCount: 1
+    lineCount: 2
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -12843,7 +12842,7 @@ RectTransform:
   - {fileID: 1339871133}
   - {fileID: 1206701267}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -13412,10 +13411,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b29089871d1095949a213b3c6ec72587, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CanvasSilla: {fileID: 0}
-  textoDeSilla: {fileID: 0}
-  WinUI: {fileID: 0}
-  win: {fileID: 0}
+  CanvasSilla: {fileID: 1102945573}
+  textoDeSilla: {fileID: 842257935}
+  WinUI: {fileID: 1586455836}
+  win: {fileID: 2031259097}
 --- !u!4 &1980218967
 Transform:
   m_ObjectHideFlags: 0
@@ -13428,7 +13427,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1986718824
 GameObject:
