@@ -13630,36 +13630,3 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2031259095}
   m_CullTransparentMesh: 0
---- !u!1 &2080845070 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2247799513637290256, guid: 75de62f9478685d4b94ac9d5b3c8e86e,
-    type: 3}
-  m_PrefabInstance: {fileID: 1929154863}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2080845075
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2080845070}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 936ad9988f92b0f4cbcc4eb80a0dfcd0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogueUI: {fileID: 0}
-  textoDelDialogo: {fileID: 0}
-  pressE: {fileID: 0}
-  frasesDialogo: []
-  posicionFrase: 0
-  hasTalked: 0
-  timeText: {fileID: 0}
-  lose: {fileID: 0}
-  LoseUI: {fileID: 0}
-  CanvasSilla: {fileID: 0}
-  textoDeSilla: {fileID: 0}
-  WinUI: {fileID: 0}
-  win: {fileID: 0}
-  timeRemaining: 30
-  timerIsRunning: 0
